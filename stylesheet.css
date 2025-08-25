@@ -1,0 +1,170 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+    font-family: Inter;
+}
+h1{
+    font-family: Display;
+    font-size: 3em;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+nav {
+  width: 100%;
+  padding: 20px 40px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer {
+  width: 100%;
+  padding: 30px;
+  color: #f5e6d3;
+  font-weight: 200;
+  background-color: #a0522d;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 0.8em;
+}
+
+.hero-banner {
+  height: 100vh;
+  margin-bottom: 2%;
+
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(https://img.freepik.com/foto-gratis/abuelo-tiro-medio-jugando-nino_23-2148985301.jpg?semt=ais_hybrid&w=740&q=80);
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-left img {
+  width: 100px;
+}
+
+.nav-right {
+  display: flex;
+  gap: 40px;
+}
+
+.nav-right a {
+  text-decoration: none;
+  font-size: 0.8em;
+  color: #f5e6d3;
+  font-weight: 300;
+}
+
+.hero-content{
+    display: flex;
+    flex-direction: column;
+    color: #f5e6d3;
+    width: 50%;
+    padding: 20px;
+    align-items: flex-start;
+    margin-top: 10%;
+}
+
+
+.cart img {
+  width: 80%;
+  background: #87a96b;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 50px;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 70%;
+  padding: 20px;
+  background-color: #f5e6d3;
+  box-shadow: 5px 5px 10px #e0e0e0;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: 400;
+  font-size: 0.9em;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+.card a img {
+  width: 10%;
+  margin: 10px;
+}
+
+.descripcion-produ {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+.descripcion-produ h2 {
+  font-size: 2em;
+  font-weight: 400;
+}
+
+.descripcion-produ p {
+  width: 70%;
+  margin: 5px;
+  font-size: 0.9em;
+  font-weight: 200;
+}
+
+
+
+
+
+@media (min-width: 768px) {
+  .cards-container {
+    flex-direction: row;
+  }
+  .card {
+    width: 20%;
+  }
+
+  .descripcion-produ h2 {
+    font-size: 2em;
+  }
+
+  .descripcion-produ p {
+    font-size: 1em;
+  }
+
+  nav {
+    flex-direction: row;
+  }
+
+  .nav-left img {
+    width: 120px;
+  }
+
+  .nav-right a {
+    font-size: 1em;
+  }
+  .cart img {
+    width: 100%;
+  }
+  footer {
+    font-size: 1em;
+  }
+}
