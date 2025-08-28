@@ -75,6 +75,7 @@ body {
 .titulo {
     font-family: var(--fuenteSecundaria);
     font-size: 48px;
+    text-transform: uppercase;
 }
 
 .linea {
@@ -84,7 +85,7 @@ body {
 }
 
 .barraBusqueda {
-    width: 48%;
+    width: 45%;
     margin-top: 40px;
     display: flex;
     align-items: center;
@@ -106,7 +107,7 @@ body {
     background: transparent;
 } 
 
-.contenedorTarjetas {
+#contenedorTarjetas {
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
@@ -118,6 +119,7 @@ body {
     border-radius: 12px;
     box-shadow: 5px 5px 15px #e0e0e0;
     transition: transform 0.3s ease;
+    text-decoration: none;
 }
 
 .tarjeta:hover {
@@ -140,6 +142,7 @@ body {
 
 .tarjetaTitulo {
     padding: 22px;
+    color: var(--colorNegro);
     font-family: var(--fuentePrimaria);
     font-size: 12px;
     font-weight: 400;
