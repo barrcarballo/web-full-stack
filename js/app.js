@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /*
     Estructura de las tarjetas:
-    <section class="contenedorTarjetas" id="contenedorTarjetas" >
+    <section id="contenedorTarjetas" >
         <a class="tarjeta">
             <div class="tarjetaImagen">
                 <img src="" alt="">
@@ -19,13 +19,13 @@ document.addEventListener("DOMContentLoaded", () => {
     productos.forEach(p => {
         const enlace = document.createElement("a");
         enlace.classList.add("tarjeta");
-        enlace.href = "#"; //enlace a detalles del producto.
+        enlace.href = `detalle-producto.html?id=${p.id}`; // Corregido: Enlaza a la página de detalles del producto
 
         const divImagen = document.createElement("div");
         divImagen.classList.add("tarjetaImagen");
 
         const img = document.createElement("img");
-        img.src = `sources/${p.nombre}.png`;
+        img.src = `sources/${p.nombre}.png`; // Mantiene la ruta original
         img.alt = p.nombre;
 
         divImagen.appendChild(img);
