@@ -9,36 +9,32 @@
 <body>
     <header class="header">
         <nav class="menu">
-            <img class="navLeft" src="sources/logo 4.png" alt="logo de la muebleria Hermanos Jota">
+            <img class="navLeft" src="sources/logo 2.svg" alt="logo de la muebleria Hermanos Jota">
             <div class="navRight">
                 <a class="navLink" href="index.html">Home</a>
                 <a class="navLink" href="productos.html">Productos</a>
                 <a class="navLink" href="">Nosotros</a>
                 <a class="navLink" href="">Contacto</a>
-                <a href="">
-                    <img class="cart" src="sources/Tote.png" alt="carrito de compras">
-                </a>
+                <a href=""><img class="cart" src="sources/Tote.png" alt="carrito de compras"></a>
             </div>
         </nav>
     </header>
 
     <main class="contenido">
-        <div>
+        <div class = "barraSuperior">
             <p class="titulo">Nuestra colección</p>
-            <hr class="linea">
+            <div class="barraBusqueda">
+                <img class="logoBusqueda" src="sources/Simbolo busqueda.svg" alt="Simbolo de busqueda">
+                <input class="busqueda" type="text" placeholder="Buscar producto">
+            </div>
         </div>
-        
-        <div class="barraBusqueda">
-            <img class="logoBusqueda" src="sources/Simbolo busqueda.svg" alt="Simbolo de busqueda">
-            <input class="busqueda" type="text" placeholder="Buscar producto">
-        </div>
-
+        <hr class="linea">
         <section id="contenedorTarjetas"></section>
     </main>
 
     <footer class="footer">Hermanos Jota 2025. Todos los derechos reservados.</footer>
     
     <script src="js/productos.js"></script>
-    <script src="js/app.js"></script>
+    <script src="js/cargar-productos.js"></script>
 </body>
 </html>
