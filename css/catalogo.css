@@ -190,7 +190,7 @@ body {
 
 @media (min-width: 1024px) {
     .header {
-        padding: 0 240px;
+        padding: 0 90px;
     }
 
     .menu {
@@ -207,7 +207,7 @@ body {
     }
 
     .contenido {
-        margin: 90px 240px 140px 240px;
+        margin: 90px 90px 140px 90px;
         gap: 40px;
     }
 
