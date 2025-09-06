@@ -45,6 +45,7 @@ consulta.addEventListener("submit", function(event){
         event.preventDefault();
         resultado.textContent = "Mensaje enviado con éxito.";
         resultado.className = "success";
-        formulario.reset();
+        consulta.reset();
     }
+
 })
