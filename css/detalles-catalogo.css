@@ -59,7 +59,6 @@ body {
 
 .cart {
     width: 100%;
-    background-color: var(--colorSecundario);
     padding: 5px;
     border-radius: 50%;
 }
@@ -162,6 +161,7 @@ body {
     flex-direction: column; /* Organiza los elementos en columna por defecto */
     align-items: center;
     gap: 40px;
+    margin: 5%;
 }
 
 .detalle-titulo {

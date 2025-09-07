@@ -60,12 +60,6 @@ body {
     color: var(--colorDetalles);
 }
 
-.cart {
-    width: 100%;
-    background-color: var(--colorSecundario);
-    padding: 5px;
-    border-radius: 50%;
-}
 
 .contenido {
     display: flex;
