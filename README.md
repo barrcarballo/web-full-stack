@@ -1,11 +1,11 @@
 # Hermanos Jota - Página Web
 
 ## Integrantes
-- Bárbara Victoria Carballo -> Home.
-- Macarena Jazmín Calderón -> Detalle de producto.
-- Agustín Francisco Martinez -> Productos.
-- Fabrizzio Conterno -> Contacto y carrito.
-- Agustín Andrada -> Contacto y validación.
+- Bárbara Victoria Carballo - Home.
+- Macarena Jazmín Calderón - Detalle de producto.
+- Agustín Francisco Martinez - Productos.
+- Fabrizzio Conterno - Contacto y carrito.
+- Agustín Andrada - Contacto y validación.
 
 ## Descripción del Proyecto
 Hermanos Jota es una página web interactiva que permite explorar los productos de la marca y simular la experiencia de compra.  
