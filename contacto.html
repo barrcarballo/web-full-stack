@@ -12,32 +12,34 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600&display=swap"
     rel="stylesheet"
   />
-  <link rel="stylesheet" href="/stylesheet.css" />
+  <link rel="stylesheet" href="/css/contacto.css" />
 </head>
 <body>
 
-  <header class="hero-banner">
+  <header>
     <nav>
-      <div class="nav-left">
-        <img src="/sources/logo 3.png" alt="logo" />
-      </div>
-      <div class="nav-right">
-        <a href="index.html">Home</a>
-        <a href="productos.html">Productos</a>
-        <a href="nosotros.html">Nosotros</a>
-        <a href="contacto.html">Contacto</a>
-        <a href="#" class="cart">
-          <img src="/sources/Tote.png" alt="carrito" />
-        </a>
-      </div>
-    </nav>
+        <div class="nav-left">
+          <img src="" alt="logo" />
+        </div>
+        <div class="nav-right">
+          <a href="">Home</a>
+          <a href="">Productos</a>
+          <a href="">Nosotros</a>
+          <a href="">Contacto</a>
+          <a href="" class="cart">
+            <img src="" alt="carrito" />
+          </a>
+        </div>
+      </nav>
+  </header>
+
+  <main>
+    <div class="hero-banner">
     <div class="hero-content">
       <h1>Contacto</h1>
       <p>Dejanos tu consulta y te responderemos lo antes posible.</p>
     </div>
-  </header>
-
-  <main>
+  </div>
     <section class="descripcion-produ">
       <h2>Formulario de consultas</h2>
       <form id="consulta" class="formulario">
@@ -67,9 +69,48 @@
     </section>
   </main>
 
-  <footer>Hermanos Jota 2025. Todos los derechos reservados.</footer>
+  <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-col footer-brand">
+          <img src="" alt="Hermanos Jota" class="footer-logo" />
+          <p class="footer-quote">
+            “Nuestro compromiso con el medio ambiente y las futuras generaciones guía cada decisión en nuestro proceso creativo y productivo.”
+          </p>
+        </div>
 
-  <script src="/validacion.js"></script>
+        <div class="footer-col">
+          <h4>Links</h4>
+          <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">Productos</a></li>
+            <li><a href="">Nosotros</a></li>
+            <li><a href="">Contacto</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contáctanos</h4>
+          <p><strong>Hermanos Jota — Casa Taller</strong></p>
+          <p>Av. San Juan 2847 - Barrio de San Cristóbal<br />CABA</p>
+          <p><strong>Horarios:</strong><br />Lunes a Viernes: 10:00 - 19:00<br />Sábados: 10:00 - 14:00</p>
+          <p><img src="" alt="Whatsapp" class="footer-icon" /> +54 11 4567-8900</p>
+          <p><strong>Ventas</strong><br />ventas@hermanosjota.com.ar</p>
+          <p><strong>Email general</strong><br />info@hermanosjota.com.ar</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Síguenos</h4>
+          <a href=""><img src="" alt="Instagram" class="footer-icon" /></a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 <strong>Hermanos Jota</strong>. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+
+  <script src="/js/validacion.js"></script>
+  <script src="/js/script.js"></script>
 </body>
 </html>
 
