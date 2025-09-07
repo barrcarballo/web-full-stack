@@ -84,7 +84,7 @@ body {
     letter-spacing: 0.1em
 }
 
-.linea {
+.lineaSeparadora {
     border: none;
     height: 1px;
     background-color: var(--colorPrimario);
@@ -215,7 +215,7 @@ body {
         gap: initial;
     }
 
-    .linea {
+    .lineaSeparadora {
         visibility: visible;
         margin-top: 10px;
         margin-bottom: 50px;
