@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto - Hermanos Jota</title>
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="/stylesheet.css" />
+</head>
+<body>
+
+  <header class="hero-banner">
+    <nav>
+      <div class="nav-left">
+        <img src="/sources/logo 3.png" alt="logo" />
+      </div>
+      <div class="nav-right">
+        <a href="index.html">Home</a>
+        <a href="productos.html">Productos</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="#" class="cart">
+          <img src="/sources/Tote.png" alt="carrito" />
+        </a>
+      </div>
+    </nav>
+    <div class="hero-content">
+      <h1>Contacto</h1>
+      <p>Dejanos tu consulta y te responderemos lo antes posible.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="descripcion-produ">
+      <h2>Formulario de consultas</h2>
+      <form id="consulta" class="formulario">
+        <div class="form-group">
+          <label for="nombre">Nombre Completo:</label>
+          <input type="text" id="nombre" name="nombre" required />
+          <span id="errorNombre" class="error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Correo Electrónico:</label>
+          <input type="email" id="email" name="email" required />
+          <span id="errorEmail" class="error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="mensaje">Mensaje:</label>
+          <textarea id="mensaje" name="mensaje" rows="6"></textarea>
+          <span id="errorMensaje" class="error"></span>
+        </div>
+
+        <div class="form-group">
+          <button type="submit">Enviar Mensaje</button>
+        </div>
+      </form>
+      <p id="resultado"></p>
+    </section>
+  </main>
+
+  <footer>Hermanos Jota 2025. Todos los derechos reservados.</footer>
+
+  <script src="/validacion.js"></script>
+</body>
+</html>
+
