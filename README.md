@@ -5,7 +5,7 @@
 - Macarena Jazmín Calderón - Detalle de producto.
 - Agustín Francisco Martinez - Productos.
 - Fabrizzio Conterno - Contacto y carrito.
-- Agustín Andrada - Contacto y validación.
+- Agustín Andrada Berenguer - Contacto y validación.
 
 ## Descripción del Proyecto
 Hermanos Jota es una página web interactiva que permite explorar los productos de la marca y simular la experiencia de compra.  
@@ -23,6 +23,4 @@ Entre las funcionalidades implementadas se incluyen:
 ## Tecnologías Utilizadas
 - HTML  
 - CSS  
-- JavaScript  
-- Google Fonts (Inter, Playfair)  
-- SVG e imágenes manipuladas mediante JavaScript  
+- JavaScript
