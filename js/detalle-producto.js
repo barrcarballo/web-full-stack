@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 `).join('')}
                             </ul>
                         </div>
-                        <button id="agregar-carrito" class="boton-carrito">Agregar al carrito</button>
+                        <button id="agregar-carrito" class="boton-carrito btn-carrito">Agregar al carrito</button>
                         <p class="cta-legado">Esto no es solo una compra, es una inversión en tu legado. Una historia que envejece con gracia.</p>
                     </div>
                 </div>
