@@ -1,13 +1,10 @@
-const cartCounter = document.getElementById("cart-count");
-const addToCartButtons = document.querySelectorAll(".add-to-cart");
+let contador = 0;
+const contadorElemento = document.getElementById("contador");
+const botones = document.querySelectorAll(".btn-carrito");
 
-
-let cartItems = 0;
-
-
-addToCartButtons.forEach(button => {
-  button.addEventListener("click", () => {
-    cartItems++;
-    cartCounter.textContent = cartItems;
+botones.forEach(boton => {
+  boton.addEventListener("click", () => {
+    contador++;
+    contadorElemento.textContent = contador;
   });
 });
