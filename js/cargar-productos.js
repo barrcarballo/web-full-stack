@@ -40,10 +40,15 @@ document.addEventListener("DOMContentLoaded", async () => {
             const titulo = document.createElement("p");
             titulo.textContent = producto.nombre;
             divTitulo.appendChild(titulo);
+
+            const boton = document.createElement("button");
+            boton.classList.add("btn-carrito");
+            boton.dataset.producto = JSON.stringify(producto);
+            boton.textContent = "Añadir al Carrito";
     
             enlace.appendChild(divImagen);
             enlace.appendChild(divTitulo);
-    
+            enlace.appendChild(boton);
             contenedor.appendChild(enlace);
         });
     }
