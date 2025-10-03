@@ -3,7 +3,7 @@ const app = express();
 const PORT = process.env.PORT || 4000;
  
 const logger = require('./scripts/logger');
-const productosRoutes = require('./Routes/productosRoutes');
+const productosRoutes = require('./routes/productosRoutes');
 
 app.use(express.json());
 app.use(logger);
