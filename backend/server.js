@@ -1,0 +1,34 @@
+const express = require('express');
+const app = express();
+const PORT = process.env.PORT || 4000;
+ 
+const logger = require('./scripts/logger');
+const productosRoutes = require('./Routes/productosRoutes');
+
+app.use(express.json());
+app.use(logger);
+ 
+app.use('/api/productos', productosRoutes);
+ 
+//Middleware para rutas no encontradas(404)
+app.use((req, res, next) => {
+  const error = new Error(`Ruta no encontrada: ${req.originalUrl}`);
+  error.status = 404;
+  next(error);
+});
+
+// Middleware de manejo de errores
+app.use((err, req, res, next) => {
+  const statusCode = err.status || 500;
+  
+  console.error(err.message, err.stack);
+  
+  res.status(statusCode).json({
+    message: err.message || 'Ha ocurrido un error en el servidor.',
+    stack: process.env.NODE_ENV === 'production' ? '' : err.stack,
+  });
+});
+
+app.listen(PORT, () => {
+  console.log(`Servidor corriendo en http://localhost:${PORT}`);
+});
