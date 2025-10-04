@@ -280,6 +280,7 @@ body {
     background-color: #b88d2d;
 }
 
+
 /* Media Queries para ajustar el diseño en pantallas más grandes */
 @media (min-width: 768px) {
     .detalle-container {

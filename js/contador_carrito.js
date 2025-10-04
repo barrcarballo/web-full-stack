@@ -1,5 +1,5 @@
 const contadorElemento = document.getElementById("contador");
-let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+let carrito = JSON.parse(sessionStorage.getItem('carrito')) || [];
 let contador = carrito.length;
 
 if (contadorElemento) contadorElemento.textContent = contador;
