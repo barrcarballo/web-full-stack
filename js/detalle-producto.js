@@ -1,53 +1,42 @@
-// detalle-producto.js
-document.addEventListener("DOMContentLoaded", () => {
-  // Obtener el ID del producto desde la URL (?id=3)
+document.addEventListener("DOMContentLoaded", async () => {
   const urlParams = new URLSearchParams(window.location.search);
   const productId = urlParams.get("id");
-  const contenedorDetalle = document.getElementById("producto-detalle");
+  const contenedor = document.getElementById("producto-detalle");
 
-  if (!productId) {
-    contenedorDetalle.innerHTML = "<p>No se especificó ningún producto.</p>";
+  if (!contenedor) {
+    console.error("No se encontró el contenedor #producto-detalle");
     return;
   }
 
-  contenedorDetalle.innerHTML = "<p style='text-align:center;'>Cargando producto...</p>";
-
-  // ✅ URL dinámica según dónde se ejecute
-  // (1) LOCAL → usa tu servidor Express en localhost:4000
-  // (2) VERCEL → usa tu backend subido (Render o Railway)
-  const API_BASE_URL =
-    window.location.hostname === "localhost" ||
-    window.location.hostname === "127.0.0.1"
+  // ✅ Detectar si estás en local o en Vercel
+  const baseURL =
+    window.location.hostname === "localhost"
       ? "http://localhost:4000"
-      : "https://hermanos-jota-api.onrender.com"; // <-- cambiá esto por tu URL real de Render
+      : "https://web-full-stack-main-backend.vercel.app"; // ← cambialo si tu backend está en otro dominio o Vercel
 
-  // 🔹 Petición al backend Express
-  fetch(`${API_BASE_URL}/api/productos/${productId}`)
-    .then((response) => {
-      if (!response.ok) throw new Error("No se pudo cargar el producto");
-      return response.json();
-    })
-    .then((producto) => {
-      const html = `
-        <div class="detalle-container">
-          <h2 class="detalle-titulo">${producto.nombre}</h2>
-          <div class="detalle-cuerpo">
-            <div class="detalle-imagen">
-              <img src="sources/${producto.nombre}.png" alt="${producto.nombre}">
-            </div>
-            <div class="detalle-info">
-              <p class="brand-essence">
-                En Hermanos Jota, creemos que un mueble es más que su función:
-                es una pieza de arte que vive y crece contigo.
-              </p>
-              <p>${producto.descripcion}</p>
-              <div class="specs-section">
-                <h3>La Esencia en Cada Detalle</h3>
-                <ul class="especificaciones">
-                  ${Object.keys(producto)
-                    .filter((key) => !["id", "nombre", "descripcion"].includes(key))
-                    .map(
-                      (key) =>
-                        `<li><strong>${
-                          key.charAt(0).toUpperCase() + key.slice(1)
-                        }:</strong> ${producto[key]}</li>`
+  try {
+    const response = await fetch(`${baseURL}/api/productos/${productId}`);
+    if (!response.ok) throw new Error(`Error HTTP ${response.status}`);
+
+    const producto = await response.json();
+
+    contenedor.innerHTML = `
+      <div class="detalle-container">
+        <h2 class="detalle-titulo">${producto.nombre}</h2>
+        <div class="detalle-cuerpo">
+          <div class="detalle-imagen">
+            <img src="${producto.imagen}" alt="${producto.nombre}">
+          </div>
+          <div class="detalle-info">
+            <p class="detalle-descripcion">${producto.descripcion}</p>
+            <p class="detalle-precio">Precio: $${producto.precio}</p>
+            <button class="boton-carrito">Añadir al carrito</button>
+          </div>
+        </div>
+      </div>
+    `;
+  } catch (error) {
+    contenedor.innerHTML = `<p style="color:red; text-align:center;">Error: ${error.message}</p>`;
+    console.error("Error cargando detalle:", error);
+  }
+});
