@@ -2,7 +2,7 @@ import Card from './card';
 import productos from '../data/productos'; 
 
 function CardsContainer() {
-  // Lista de los nombres de productos que quieres destacar
+
   const destacados = [
     "Sofá Patagonia", 
     "Biblioteca Recoleta", 
@@ -10,7 +10,6 @@ function CardsContainer() {
     "Escritorio Costa"
   ];
 
-  // Filtra los productos para obtener solo los destacados
   const productosDestacados = productos.filter(producto =>
     destacados.includes(producto.nombre)
   );
