@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto - Hermanos Jota</title>
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="/css/contacto.css" />
+</head>
+<body>
+
+  <header>
+    <nav>
+        <div class="nav-left">
+          <img src="" alt="logo" />
+        </div>
+        <div class="nav-right">
+          <a href="">Home</a>
+          <a href="">Productos</a>
+          <a href="">Nosotros</a>
+          <a href="">Contacto</a>
+          <a href="" class="cart">
+            <img src="" alt="carrito" />
+          </a>
+        </div>
+      </nav>
+  </header>
+
+  <main>
+    <div class="hero-banner">
+    <div class="hero-content">
+      <h1>Contacto</h1>
+      <p>Dejanos tu consulta y te responderemos lo antes posible.</p>
+    </div>
+  </div>
+    <section class="descripcion-produ">
+      <h2>Formulario de consultas</h2>
+      <form id="consulta" class="formulario">
+        <div class="form-group">
+          <label for="nombre">Nombre Completo:</label>
+          <input type="text" id="nombre" name="nombre" required />
+          <span id="errorNombre" class="error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Correo Electrónico:</label>
+          <input type="email" id="email" name="email" required />
+          <span id="errorEmail" class="error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="mensaje">Mensaje:</label>
+          <textarea id="mensaje" name="mensaje" rows="6"></textarea>
+          <span id="errorMensaje" class="error"></span>
+        </div>
+
+        <div class="form-group">
+          <button type="submit">Enviar Mensaje</button>
+        </div>
+      </form>
+      <p id="resultado"></p>
+    </section>
+  </main>
+
+  <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-col footer-brand">
+          <img src="" alt="Hermanos Jota" class="footer-logo" />
+          <p class="footer-quote">
+            “Nuestro compromiso con el medio ambiente y las futuras generaciones guía cada decisión en nuestro proceso creativo y productivo.”
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Links</h4>
+          <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">Productos</a></li>
+            <li><a href="">Nosotros</a></li>
+            <li><a href="">Contacto</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contáctanos</h4>
+          <p><strong>Hermanos Jota — Casa Taller</strong></p>
+          <p>Av. San Juan 2847 - Barrio de San Cristóbal<br />CABA</p>
+          <p><strong>Horarios:</strong><br />Lunes a Viernes: 10:00 - 19:00<br />Sábados: 10:00 - 14:00</p>
+          <p><img src="" alt="Whatsapp" class="footer-icon" /> +54 11 4567-8900</p>
+          <p><strong>Ventas</strong><br />ventas@hermanosjota.com.ar</p>
+          <p><strong>Email general</strong><br />info@hermanosjota.com.ar</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Síguenos</h4>
+          <a href=""><img src="" alt="Instagram" class="footer-icon" /></a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 <strong>Hermanos Jota</strong>. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+
+  <script src="/js/validacion.js"></script>
+  <script src="/js/script.js"></script>
+</body>
+</html>
+
