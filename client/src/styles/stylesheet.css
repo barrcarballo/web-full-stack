@@ -66,7 +66,7 @@ nav {
   margin-bottom: 5%;
 
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.694)),
-    url("/sources/abuelo-de-tiro-medio-jugando-con-nino.jpg");
+    url("/public/images/abuelo-de-tiro-medio-jugando-con-nino.jpg");
   background-size: cover;
   background-position: center;
 
