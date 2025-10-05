@@ -4,7 +4,7 @@ import '../styles/catalogo.css';
 import '../styles/stylesheet.css';
 
 
-function Productos() {
+function ProductList() {
   const [productos, setProductos] = useState([]);
   const [cargando, setCargando] = useState(false);
   const [error, setError] = useState(null);
@@ -57,4 +57,4 @@ function Productos() {
   );
 }
 
-export default Productos;
+export default ProductList;
