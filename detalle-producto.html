@@ -1,34 +1,78 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Detalle del Producto | Mueblería Hermanos Jota</title>
-  <link rel="stylesheet" href="css/detalles-catalogo.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Producto</title>
+    <link rel="stylesheet" href="css/detalles-catalogo.css">
+    <link rel="stylesheet" href="css/stylesheet.css">
 </head>
 <body>
-  <header class="header">
-    <nav class="menu">
-      <div class="navLeft">
-        <img src="sources/logo 3.png" alt="Logo Hermanos Jota" width="75" />
-      </div>
-      <div class="navRight">
-        <a class="navLink" href="index.html">Home</a>
-        <a class="navLink" href="productos.html">Productos</a>
-        <a class="navLink" href="contacto.html">Contacto</a>
-        <img src="sources/Tote.png" alt="Carrito" width="24" />
-      </div>
-    </nav>
+    <header>
+    <nav>
+        <div class="nav-left">
+          <img src="" alt="logo" />
+        </div>
+        <div class="nav-right">
+          <a href="">Home</a>
+          <a href="">Productos</a>
+          <a href="">Nosotros</a>
+          <a href="">Contacto</a>
+          <a href="" class="cart">
+            <img src="" alt="carrito" />
+            <span id="contador">0</span>
+          </a>
+        </div>
+      </nav>
   </header>
 
-  <main id="producto-detalle"></main>
+    <main class="contenido-detalle"> <section id="producto-detalle"></section>
+    </main>
 
-  <footer class="footer">
-    <p>© 2025 Mueblería Hermanos Jota | Todos los derechos reservados.</p>
-  </footer>
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-col footer-brand">
+          <img src="" alt="Hermanos Jota" class="footer-logo" />
+          <p class="footer-quote">
+            “Nuestro compromiso con el medio ambiente y las futuras generaciones guía cada decisión en nuestro proceso creativo y productivo.”
+          </p>
+        </div>
 
-  <script src="js/detalle-producto.js"></script>
+        <div class="footer-col">
+          <h4>Links</h4>
+          <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">Productos</a></li>
+            <li><a href="">Nosotros</a></li>
+            <li><a href="">Contacto</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contáctanos</h4>
+          <p><strong>Hermanos Jota — Casa Taller</strong></p>
+          <p>Av. San Juan 2847 - Barrio de San Cristóbal<br />CABA</p>
+          <p><strong>Horarios:</strong><br />Lunes a Viernes: 10:00 - 19:00<br />Sábados: 10:00 - 14:00</p>
+          <p><img src="" alt="Whatsapp" class="footer-icon" /> +54 11 4567-8900</p>
+          <p><strong>Ventas</strong><br />ventas@hermanosjota.com.ar</p>
+          <p><strong>Email general</strong><br />info@hermanosjota.com.ar</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Síguenos</h4>
+          <a href=""><img src="" alt="Instagram" class="footer-icon" /></a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 <strong>Hermanos Jota</strong>. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/productos.js"></script>
+    <script src="js/detalle-producto.js"></script>
+    <script src="js/contador_carrito.js"></script>
 </body>
 </html>
-
 
