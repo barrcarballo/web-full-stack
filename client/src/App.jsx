@@ -1,4 +1,5 @@
 import './App.css'
+import React from 
 import Home from './pages/home.jsx'
 import Productos from './pages/productos.jsx'
 import DetallesProducto from './pages/detallesProducto.jsx'
