@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "../styles/detalles-catalogo.css";
 
 
-function ProductDetail({ productId }) {
+function ProductDetail({ productId, agregarAlCarrito }) {
   const [producto, setProducto] = useState(null);
   const [Cargando, setCargando] = useState(true);
   const [error, setError] = useState(null);
@@ -51,8 +51,8 @@ function ProductDetail({ productId }) {
                   }
                 </ul>
                 <div>
-                  <button id="agregar-carrito" class="boton-carrito btn-carrito" data-producto='${JSON.stringify(producto)}'>Agregar al carrito</button>
-                  <p class="cta-legado">Esto no es solo una compra, es una inversión en tu legado. Una historia que envejece con gracia.</p>
+                  <button id="agregar-carrito" class="boton-carrito btn-carrito" onClick={() => agregarAlCarrito(producto)}'>Agregar al carrito</button>
+                  <p className="cta-legado">Esto no es solo una compra, es una inversión en tu legado. Una historia que envejece con gracia.</p>
                 </div>
             </div>
           </div>
