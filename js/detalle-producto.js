@@ -26,13 +26,22 @@ document.addEventListener("DOMContentLoaded", () => {
                             </ul>
                         </div>
                         <button id="agregar-carrito" class="boton-carrito">Agregar al carrito</button>
-                        <button id="agregar-carrito" class="boton-carrito btn-carrito">Agregar al carrito</button>
                         <p class="cta-legado">Esto no es solo una compra, es una inversión en tu legado. Una historia que envejece con gracia.</p>
                     </div>
                 </div>
-@@ -44,4 +44,4 @@
+            </div>
+        `;
+        contenedorDetalle.innerHTML = htmlProducto;
+        
+        const botonCarrito = document.getElementById("agregar-carrito");
+        botonCarrito.addEventListener("click", () => {
+            let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            carrito.push(producto);
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+            alert(`${producto.nombre} ha sido agregado al carrito.`);
+        });
+
     } else {
         contenedorDetalle.innerHTML = "<p>Producto no encontrado.</p>";
     }
-});
 });
