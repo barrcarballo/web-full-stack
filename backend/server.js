@@ -1,12 +1,15 @@
 const express = require('express');
 const app = express();
+const cors = require('cors');
+
 const PORT = process.env.PORT || 4000;
  
 const logger = require('./scripts/logger');
 const productosRoutes = require('./routes/productosRoutes');
 
-app.use(express.json());
+app.use(cors());
 app.use(logger);
+app.use(express.json());
  
 app.use('/api/productos', productosRoutes);
  
