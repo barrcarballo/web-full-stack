@@ -4,11 +4,7 @@ import ProductList from '../components/ProductList.jsx';
 
 function Productos() {
     return (
-        <>
-            <Header />
-            <ProductList />
-            <Footer />
-        </>
+        <ProductList />
     );
 
 };

@@ -7,7 +7,7 @@ function Main() {
     <main>
       <HeroBanner />
       <ProductDescription />
-    <CardsContainer /> 
+      <CardsContainer /> 
     </main>
   );
 }

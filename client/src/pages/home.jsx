@@ -4,11 +4,7 @@ import Main from "../components/main.jsx";
 
 function home() {
   return (
-    <>
-      <Header />
-      <Main />
-      <Footer />
-    </>
+    <Main />
   );
 }
 

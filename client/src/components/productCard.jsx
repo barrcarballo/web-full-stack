@@ -1,13 +1,15 @@
-function ProductCard({nombre, urlImagen}) {
+import { Link } from 'react-router-dom';
+
+function ProductCard({id, nombre, urlImagen}) {
     return (
-            <a className="tarjeta" href="">
+            <Link to={`/producto/${id}`} className="tarjeta">
                 <div className="tarjetaImagen" >
                     <img src={urlImagen} alt={nombre} />
                 </div>
                 <div className="tarjetaTitulo" >
                     <p>{nombre}</p>
                 </div>
-            </a>
+            </Link>
     );
 };
 

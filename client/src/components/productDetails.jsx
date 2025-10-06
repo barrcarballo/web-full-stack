@@ -51,7 +51,7 @@ function ProductDetail({ productId, agregarAlCarrito }) {
                   }
                 </ul>
                 <div>
-                  <button id="agregar-carrito" class="boton-carrito btn-carrito" onClick={() => agregarAlCarrito(producto)}'>Agregar al carrito</button>
+                  <button id="agregar-carrito" class="boton-carrito btn-carrito" onClick={() => agregarAlCarrito(producto)}>Agregar al carrito</button>
                   <p className="cta-legado">Esto no es solo una compra, es una inversión en tu legado. Una historia que envejece con gracia.</p>
                 </div>
             </div>

@@ -66,7 +66,7 @@ nav {
   margin-bottom: 5%;
 
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.694)),
-    url("images/abuelo-de-tiro-medio-jugando-con-nino.jpg");
+    url("/images/abuelo-de-tiro-medio-jugando-con-nino.jpg");
   background-size: cover;
   background-position: center;
 
@@ -302,3 +302,54 @@ nav {
     max-width: 120px;
   }
 }
+.formulario {
+  width: 60%;
+  margin: 30px auto;
+  background: #f5e6d3;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 5px 5px 10px #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.formulario label {
+  font-weight: 600;
+  font-size: 0.9em;
+}
+
+.formulario input,
+.formulario textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: Inter;
+  font-size: 0.9em;
+}
+
+.formulario button {
+  padding: 12px;
+  background: #a0522d;
+  color: #f5e6d3;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.formulario button:hover {
+  background: #8b4513;
+}
+
+.error {
+  color: red;
+  font-size: 0.8em;
+} 

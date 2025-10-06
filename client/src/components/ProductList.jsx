@@ -40,11 +40,12 @@ function ProductList() {
         <hr className="lineaSeparadora" />
 
         <section id="contenedorTarjetas">
-          {cargando && <p className="mensaje">Cargando...</p>}
-          {error && <p className="mensaje error">{error}</p>}
-          {!cargando && !error && productos.length === 0 && <p className="mensaje">No hay productos</p>}
+          {cargando && <p>Cargando...</p>}
+          {error && <p>{error}</p>}
+          {!cargando && !error && productos.length === 0 && <p>No hay productos</p>}
           {!cargando && !error && productos.map((producto) => (
-            <ProductCard 
+            <ProductCard
+              id={producto.id}
               nombre={producto.nombre}
               urlImagen={`images/${producto.nombre}.png`}
             />

@@ -17,9 +17,10 @@ function CardsContainer() {
   return (
     <div className="cards-container">
       {productosDestacados.map((producto) => (
-        <Card 
+        <Card
+            id={producto.id}
             nombre={producto.nombre}
-            urlImagen={`images/${producto.nombre}.png`}
+            urlImagen={`/images/${producto.nombre}.png`}
           />
       ))}
     </div>
