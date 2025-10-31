@@ -1,9 +1,16 @@
 const express = require('express');
+const mongoose = require('mongoose')
 const app = express();
 const cors = require('cors');
 
+require('dotenv').config();
+const DB_URI = process.env.DATABASE_URL;
 const PORT = process.env.PORT || 4000;
  
+mongoose.connect(DB_URI)
+  .then(() => console.log('¡Conexión exitosa a MongoDB!'))
+  .catch(err => console.error('Error al conectar a MongoDB:', err));
+
 const logger = require('./scripts/logger');
 const productosRoutes = require('./routes/productosRoutes');
 
