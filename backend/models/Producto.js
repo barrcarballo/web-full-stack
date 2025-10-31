@@ -26,6 +26,7 @@ nombre: {
     trim: true
   }
 }, {
+  strict: false,
   timestamps: true 
 });
  
