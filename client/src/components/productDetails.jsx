@@ -36,7 +36,7 @@ function ProductDetails({ productId, agregarAlCarrito }) {
             <img src={`/images/${producto.nombre}.png`} alt={producto.nombre} className="detalle-img" />
           </div>
           <div className="detalle-info" >
-            <p class="brand-essence">En Hermanos Jota, creemos que un mueble es más que su función. Es una pieza de arte que vive y crece contigo.</p>
+            <p className="brand-essence">En Hermanos Jota, creemos que un mueble es más que su función. Es una pieza de arte que vive y crece contigo.</p>
             <p>{producto.descripcion}</p>
             <div className="specs-section">
                 <h3>La Esencia en Cada Detalle</h3>
@@ -51,7 +51,7 @@ function ProductDetails({ productId, agregarAlCarrito }) {
                   }
                 </ul>
                 <div>
-                  <button id="agregar-carrito" class="boton-carrito btn-carrito" onClick={() => agregarAlCarrito(producto)}>Agregar al carrito</button>
+                  <button id="agregar-carrito" className="boton-carrito btn-carrito" onClick={() => agregarAlCarrito(producto)}>Agregar al carrito</button>
                   <p className="cta-legado">Esto no es solo una compra, es una inversión en tu legado. Una historia que envejece con gracia.</p>
                 </div>
             </div>
