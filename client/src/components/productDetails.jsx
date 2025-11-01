@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "../styles/detalles-catalogo.css";
 
 
-function ProductDetail({ productId, agregarAlCarrito }) {
+function ProductDetails({ productId, agregarAlCarrito }) {
   const [producto, setProducto] = useState(null);
   const [Cargando, setCargando] = useState(true);
   const [error, setError] = useState(null);
@@ -62,4 +62,4 @@ function ProductDetail({ productId, agregarAlCarrito }) {
   );
 }
 
-export default ProductDetail;
+export default ProductDetails;
