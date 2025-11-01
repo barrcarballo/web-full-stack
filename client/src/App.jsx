@@ -4,6 +4,7 @@ import Home from './pages/home.jsx'
 import Productos from './pages/productos.jsx'
 import DetallesProducto from './pages/detallesProducto.jsx'
 import Contacto from './pages/contacto.jsx'
+import CrearProducto from "./pages/CrearProducto.jsx";
 import Header from './components/header.jsx';
 import Footer from './components/footer.jsx';
 
@@ -42,6 +43,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/productos" element={<Productos />} />
           <Route path="/producto/:id" element={<DetallesProducto agregarAlCarrito={agregarAlCarrito} />} />
+          <Route path="/admin/crear-producto" element={<CrearProducto />} />
           <Route path="/contacto" element={<Contacto />} />
         </Routes>
       </main>
