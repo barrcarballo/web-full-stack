@@ -19,8 +19,20 @@ function App() {
   localStorage.setItem("carrito", JSON.stringify(carrito));
   }, [carrito]);
   const agregarAlCarrito = (producto) => {
-  setCarrito((prevCarrito) => [...prevCarrito, producto]);
-  };  
+  setCarrito((prevCarrito) => {
+    const existe = prevCarrito.find(item => item.id === producto.id);
+
+    if (existe) {
+      return prevCarrito.map(item =>
+        item.id === producto.id
+          ? { ...item, cantidad: item.cantidad + 1 }
+          : item
+      );
+    } else {
+      return [...prevCarrito, { ...producto, cantidad: 1 }];
+    }
+    });
+  };
 
   return (
   <Router>
