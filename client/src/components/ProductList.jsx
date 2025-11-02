@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ProductCard from "./productCard";
 import '../styles/catalogo.css';
 import '../styles/stylesheet.css';
@@ -10,22 +10,26 @@ function ProductList() {
   const [cargando, setCargando] = useState(false);
   const [error, setError] = useState(null);
 
- const obtenerProductos = async () => {
-    setCargando(true);
-    setError(null);
-    
-    try {
-      const respuesta = await fetch("http://localhost:4000/api/productos");
-      if (!respuesta.ok) throw new Error(`HTTP ${respuesta.status}`);
-      const arrayProductos = await respuesta.json();
-      setProductos(arrayProductos);
-    } catch (err) {
-      console.error(err);
-      setError("Error al cargar los productos");
-    } finally {
-      setCargando(false);
-    }
-  };
+  useEffect(() => {
+    const obtenerProductos = async () => {
+      setCargando(true);
+      setError(null);
+      
+      try {
+        const respuesta = await fetch("http://localhost:4000/api/productos");
+        if (!respuesta.ok) throw new Error(`HTTP ${respuesta.status}`);
+        const arrayProductos = await respuesta.json();
+        setProductos(arrayProductos);
+      } catch (err) {
+        console.error(err);
+        setError("Error al cargar los productos");
+      } finally {
+        setCargando(false);
+      }
+    };
+ 
+    obtenerProductos();
+  }, []);
 
   return (
     <>
@@ -60,7 +64,6 @@ function ProductList() {
           ))}
         </section>
 
-        <button className="botonCarga" onClick={obtenerProductos}>Cargar productos</button>
       </main>
     </>
   );
