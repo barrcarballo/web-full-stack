@@ -126,6 +126,22 @@ body {
     color: var(--colorFondo);
     transition: 200ms;
 }
+
+.btn-eliminar-producto{
+    margin: 10px;
+    background-color: var(--colorAcentos);
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-eliminar-producto:hover{
+    background-color: #e60000;
+    transition: 200ms;
+}
+
 .logoBusqueda {
     width: 15px;
 }

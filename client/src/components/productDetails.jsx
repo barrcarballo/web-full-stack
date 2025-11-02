@@ -26,7 +26,7 @@ function ProductDetails({ productId, agregarAlCarrito }) {
       });
   }, [productId]);
 
-  // ✅ Función eliminar producto
+  // Función eliminar producto
   const handleDelete = async () => {
     const confirmar = window.confirm(`¿Seguro que deseas eliminar "${producto.nombre}"?`);
 
@@ -41,7 +41,7 @@ function ProductDetails({ productId, agregarAlCarrito }) {
 
       alert("Producto eliminado exitosamente ✅");
 
-      // ✅ Redirigimos al catálogo
+      // Redirigimos al catálogo
       navigate("/productos");
     } catch (err) {
       alert("No se pudo eliminar ❌ " + err.message);
@@ -53,7 +53,7 @@ function ProductDetails({ productId, agregarAlCarrito }) {
   if (!producto) return <p>No se encontró el producto</p>;
 
   return (
-    <div className="product-details-container">
+    <div className="detalle-container">
       <div className="detalle-producto">
         <h2 className="detalle-titulo">{producto.nombre}</h2>
         <div className="detalle-cuerpo">
@@ -103,17 +103,8 @@ function ProductDetails({ productId, agregarAlCarrito }) {
                   Agregar al carrito
                 </button>
 
-                {/* ✅ NUEVO BOTÓN ELIMINAR */}
-                <button
-                  style={{
-                    marginLeft: "10px",
-                    backgroundColor: "#ff4d4d",
-                    color: "white",
-                    padding: "10px",
-                    borderRadius: "8px",
-                    border: "none",
-                    cursor: "pointer",
-                  }}
+                {/*BOTÓN ELIMINAR */}
+                <button className="btn-eliminar-producto"
                   onClick={handleDelete}
                 >
                   Eliminar Producto
