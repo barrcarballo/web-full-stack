@@ -16,7 +16,7 @@ function CardsContainer() {
   useEffect(() => {
     const fetchProductos = async () => {
       try {
-        const respuesta = await fetch("http://localhost:4000/api/productos");
+        const respuesta = await fetch("https://web-full-stack-ebmo.onrender.com/api/productos");
         if (!respuesta.ok) throw new Error(`HTTP ${respuesta.status}`);
         const data = await respuesta.json();
         setProductos(data);

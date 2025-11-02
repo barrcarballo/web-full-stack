@@ -16,7 +16,7 @@ function ProductList() {
       setError(null);
       
       try {
-        const respuesta = await fetch("http://localhost:4000/api/productos");
+        const respuesta = await fetch("https://web-full-stack-ebmo.onrender.com/api/productos");
         if (!respuesta.ok) throw new Error(`HTTP ${respuesta.status}`);
         const arrayProductos = await respuesta.json();
         setProductos(arrayProductos);

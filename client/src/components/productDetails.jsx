@@ -11,7 +11,7 @@ function ProductDetails({ productId, agregarAlCarrito }) {
   useEffect(() => {
     if (!productId) return;
 
-    fetch(`http://localhost:4000/api/productos/${productId}`)
+    fetch(`https://web-full-stack-ebmo.onrender.com/api/productos/${productId}`)
       .then((res) => {
         if (!res.ok) throw new Error("Error al obtener el producto");
         return res.json();
@@ -33,7 +33,7 @@ function ProductDetails({ productId, agregarAlCarrito }) {
     if (!confirmar) return;
 
     try {
-      const res = await fetch(`http://localhost:4000/api/productos/${productId}`, {
+      const res = await fetch(`https://web-full-stack-ebmo.onrender.com/api/productos/${productId}`, {
         method: "DELETE",
       });
 

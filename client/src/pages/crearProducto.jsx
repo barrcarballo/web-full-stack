@@ -24,7 +24,7 @@ function CrearProducto() {
     e.preventDefault();
 
     try {
-      const res = await fetch("http://localhost:4000/api/productos", {
+      const res = await fetch("https://web-full-stack-ebmo.onrender.com/api/productos", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
