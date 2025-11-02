@@ -6,7 +6,7 @@ import DetallesProducto from './pages/detallesProducto.jsx'
 import Contacto from './pages/contacto.jsx'
 import Header from './components/header.jsx';
 import Footer from './components/footer.jsx';
-import CrearProducto from './pages/CrearProducto.jsx';
+import CrearProducto from './pages/crearProducto.jsx';
 
 function App() {
   const [carrito, setCarrito] = useState([]);
