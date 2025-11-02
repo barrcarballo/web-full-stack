@@ -1,4 +1,4 @@
-# Hermanos Jota - Mueblería Online
+# Proyecto Full Stack (Sprint 5 y 6)
 
 Proyecto Full Stack desarrollado por **Grupo 5 - Antecedentes Penales**
 
