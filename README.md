@@ -1,94 +1,108 @@
-# Proyecto Full Stack (Sprint 3 y 4)
+# Hermanos Jota - Mueblería Online
 
-### GRUPO 5 - Antecedentes penales 
-**Integrantes**
-- Bárbara Victoria Carballo  
-- Macarena Jazmín Calderón  
-- Agustín Francisco Martinez  
-- Agustín Andrada Berenguer  
+Proyecto Full Stack desarrollado por **Grupo 5 - Antecedentes Penales**
 
+## Integrantes
+- **Bárbara Victoria Carballo**  
+- **Macarena Jazmín Calderón**  
+- **Agustín Francisco Martínez**  
+- **Agustín Andrada Berenguer**
 
-## Descripción
+---
 
-Hermanos Jota es una página web interactiva que permite explorar los productos de la marca y simular la experiencia de compra.  
+## Sitios Desplegados
 
-Entre las funcionalidades implementadas se incluyen:
-- Ver un catálogo de productos.  
-- Explorar detalles de cada producto.  
-- Añadir productos a un carrito.  
-- Completar un formulario de contacto.  
+- **Frontend (Vercel):** https://hermanos-jota-eight.vercel.app/
+- **Backend (Render):** https://web-full-stack-ebmo.onrender.com
 
-## Tecnologías
+---
 
-- **Backend:** Node.js + Express  
-- **Frontend:** React (SPA) + Vite  
+##  Descripción del Proyecto
 
-Monorepo con dos carpetas principales:
-/backend → API REST
-/client → Frontend React
+**Hermanos Jota** es una aplicación web para una mueblería artesanal que permite a los usuarios:
+- Explorar un catálogo de productos.  
+- Ver detalles de cada mueble.  
+- Agregar productos al carrito de compras.  
+- Contactar con la tienda.  
 
+El sitio fue desarrollado con una arquitectura **MERN Stack (MongoDB, Express, React, Node.js)**.
 
-## Instalación y ejecución
+---
 
-**1️⃣ Instalar dependencias**
+## Tecnologías Utilizadas
 
+### **Frontend**
+- React  
+- React Router DOM  
+- Vite  
+- CSS puro  
+
+### **Backend**
+- Node.js  
+- Express  
+- Mongoose  
+- MongoDB Atlas  
+
+---
+
+## Instrucciones para correr el proyecto localmente
+
+### 1. Clonar el repositorio
+
+```bash
 git clone https://github.com/barrcarballo/web-full-stack.git
 cd web-full-stack
+```
 
-**2️⃣ Instalar dependencias**
+---
 
-Backend:
+### 2. Configurar las variables de entorno
+
+En la carpeta **backend**, crear un archivo `.env` con el siguiente contenido:
+
+```env
+PORT=4000
+DATABASE_URL=mongodb+srv://agusmartinez:hermanosJota@cluster0.ckbz2km.mongodb.net/muebleria?retryWrites=true&w=majority
+```
+
+> ⚠️ **Importante:**  
+> No compartas esta cadena de conexión públicamente en producción.  
+> Se recomienda usar un usuario de solo lectura o variables seguras en Render.
+
+---
+
+### 3. Instalar dependencias
+
+#### Backend
+```bash
 cd backend
 npm install
-
-
-Frontend:
-cd ../client
-npm install
-
-
-**3️⃣ Iniciar servidores**
-
-Backend:
-cd backend
 npm start
+```
 
-URL: http://localhost:5000
-
-Frontend:
-cd ../client
+#### Frontend
+En otra terminal:
+```bash
+cd frontend
+npm install
 npm run dev
+```
 
-URL: http://localhost:5173
+---
 
+### 4. Acceder al sitio localmente
 
-## Arquitectura
-**Backend**
-Express con rutas modulares (express.Router).
+- **Frontend:** [http://localhost:5173](http://localhost:5173)  
+- **Backend API:** [http://localhost:4000/api/productos](http://localhost:4000/api/productos)
 
-Middleware de logging y manejo de errores.
+---
 
-Datos de productos en archivo local .js.
+## Endpoints principales del backend
 
-**Frontend**
-Componentes reutilizables: <Navbar>, <ProductList>, <ProductCard>, <ProductDetail>, <ContactForm>.
-
-Estado con useState, renderizado condicional para vistas y carrito.
-
-Fetch al backend para obtener productos.
-
-Decisión clave: separar frontend y backend para mantener el proyecto modular y escalable.
-
-
-## Objetivos de Aprendizaje
-
-Construir servidor web y API REST con Node.js y Express.
-
-Organizar rutas y middlewares en Express.
-
-Reconstruir SPA con React y componentes reutilizables.
-
-Manejar estado, props, eventos, listas dinámicas y renderizado condicional.
-
-Conectar frontend con backend y gestionar estados de carga y error.
-
+| Método | Ruta | Descripción |
+|--------|------|-------------|
+| `GET` | `/api/productos` | Lista todos los productos |
+| `GET` | `/api/productos/:id` | Muestra un producto específico |
+| `POST` | `/api/productos` | Crea un nuevo producto |
+| `PUT` | `/api/productos/:id` | Actualiza un producto |
+| `DELETE` | `/api/productos/:id` | Elimina un producto |
