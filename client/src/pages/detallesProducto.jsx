@@ -1,7 +1,6 @@
-import Header from "../components/header";
-import Footer from "../components/footer";
-import ProductDetails from "../components/productDetails";
 import { useParams } from 'react-router-dom';
+import ProductDetails from "../components/productDetails";
+
 
 function DetallesProducto({agregarAlCarrito}) {
     const { id } = useParams();

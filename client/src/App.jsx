@@ -4,9 +4,9 @@ import Home from './pages/home.jsx'
 import Productos from './pages/productos.jsx'
 import DetallesProducto from './pages/detallesProducto.jsx'
 import Contacto from './pages/contacto.jsx'
-import CrearProducto from "./pages/CrearProducto.jsx";
 import Header from './components/header.jsx';
 import Footer from './components/footer.jsx';
+import CrearProducto from './pages/CrearProducto.jsx';
 
 function App() {
   const [carrito, setCarrito] = useState([]);
@@ -20,20 +20,8 @@ function App() {
   localStorage.setItem("carrito", JSON.stringify(carrito));
   }, [carrito]);
   const agregarAlCarrito = (producto) => {
-  setCarrito((prevCarrito) => {
-    const existe = prevCarrito.find(item => item.id === producto.id);
-
-    if (existe) {
-      return prevCarrito.map(item =>
-        item.id === producto.id
-          ? { ...item, cantidad: item.cantidad + 1 }
-          : item
-      );
-    } else {
-      return [...prevCarrito, { ...producto, cantidad: 1 }];
-    }
-    });
-  };
+  setCarrito((prevCarrito) => [...prevCarrito, producto]);
+  };  
 
   return (
   <Router>
@@ -43,8 +31,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/productos" element={<Productos />} />
           <Route path="/producto/:id" element={<DetallesProducto agregarAlCarrito={agregarAlCarrito} />} />
-          <Route path="/admin/crear-producto" element={<CrearProducto />} />
           <Route path="/contacto" element={<Contacto />} />
+          <Route path="/admin/crear-producto" element={<CrearProducto />} />
         </Routes>
       </main>
       <Footer />

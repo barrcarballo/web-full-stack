@@ -2,6 +2,7 @@ import { useState } from "react";
 import ProductCard from "./productCard";
 import '../styles/catalogo.css';
 import '../styles/stylesheet.css';
+import { Link } from 'react-router-dom'; // 
 
 
 function ProductList() {
@@ -31,6 +32,12 @@ function ProductList() {
       <main className="contenido">
         <div className = "barraSuperior">
           <p className="titulo">Nuestra colección</p>
+          
+          {/* BOTÓN DE CREAR PRODUCTO */}
+          <Link to="/admin/crear-producto" className="btn-crear-producto">
+            + Crear nuevo producto
+          </Link>
+
             <div className="barraBusqueda">
                 <img className="logoBusqueda" src="images/Simbolo busqueda.svg" alt="Simbolo de busqueda" />
                 <input className="busqueda" type="text" placeholder="Buscar producto" />
@@ -45,7 +52,8 @@ function ProductList() {
           {!cargando && !error && productos.length === 0 && <p>No hay productos</p>}
           {!cargando && !error && productos.map((producto) => (
             <ProductCard
-              id={producto.id}
+              key={producto._id} // 👈 importante
+              id={producto._id}
               nombre={producto.nombre}
               urlImagen={`images/${producto.nombre}.png`}
             />
