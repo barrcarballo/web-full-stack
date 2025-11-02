@@ -1,17 +1,24 @@
 import { useEffect, useState } from "react";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import "../styles/detalles-catalogo.css";
+import { apiDelete } from "../services/api";
 
-function ProductDetails({ productId, agregarAlCarrito }) {
+export default function ProductDetails() {
+  const { productId } = useParams();
+  const navigate = useNavigate();
+
   const [producto, setProducto] = useState(null);
-  const [Cargando, setCargando] = useState(true);
-  const [error, setError] = useState(null);
+  const [cargando, setCargando] = useState(true);
+  const [error, setError] = useState("");
+  const [eliminando, setEliminando] = useState(false);
+  const [errorEliminar, setErrorEliminar] = useState("");
 
   useEffect(() => {
-    if (!productId) return; //  evita peticiones con id undefined
+    if (!productId) return;
 
-    fetch(`http://localhost:4000/api/productos/${productId}`)
+    fetch(`${import.meta.env.VITE_API_URL}/api/productos/${productId}`)
       .then((res) => {
-        if (!res.ok) throw new Error("Error al obtener el producto");
+        if (!res.ok) throw new Error("Error cargando el producto");
         return res.json();
       })
       .then((data) => {
@@ -24,69 +31,67 @@ function ProductDetails({ productId, agregarAlCarrito }) {
       });
   }, [productId]);
 
-  if (Cargando) return <p className="status">Cargando producto...</p>;
-  if (error) return <p className="status error">Error: {error}</p>;
-  if (!producto) return <p className="status">Producto no encontrado</p>;
+  async function handleDelete() {
+    if (!producto?._id) return;
+
+    const confirmar = window.confirm(
+      `¿Seguro que deseas eliminar "${producto.nombre}"?`
+    );
+
+    if (!confirmar) return;
+
+    try {
+      setEliminando(true);
+      await apiDelete(`/api/productos/${producto._id}`);
+      navigate("/productos", { replace: true });
+    } catch (err) {
+      setErrorEliminar("No se pudo eliminar el producto");
+      setEliminando(false);
+    }
+  }
+
+  if (cargando) return <p>Cargando producto...</p>;
+  if (error) return <p className="error">{error}</p>;
+  if (!producto) return <p>No existe el producto</p>;
 
   return (
-    <div className="producto-detalle">
-      <div className="detalle-container">
-        <h2 className="detalle-titulo">{producto.nombre}</h2>
-        <div className="detalle-cuerpo">
-          <div className="detalle-imagen">
-            <img
-              src={`/images/${producto.nombre}.png`}
-              alt={producto.nombre}
-              className="detalle-img"
-            />
-          </div>
-          <div className="detalle-info">
-            <p className="brand-essence">
-              En Hermanos Jota, creemos que un mueble es más que su función. Es
-              una pieza de arte que vive y crece contigo.
-            </p>
-            <p>{producto.descripcion}</p>
-            <div className="specs-section">
-              <h3>La Esencia en Cada Detalle</h3>
-              <ul className="especificaciones">
-                {Object.keys(producto)
-                  .filter(
-                    (key) =>
-                      key !== "id" &&
-                      key !== "nombre" &&
-                      key !== "descripcion" &&
-                      key !== "_id" &&
-                      key !== "Stock" &&
-                      key !== "imagenUrl"
-                  )
-                  .map((key) => (
-                    <li key={key}>
-                      <strong>
-                        {key.charAt(0).toUpperCase() + key.slice(1)}:
-                      </strong>{" "}
-                      {producto[key]}
-                    </li>
-                  ))}
-              </ul>
-              <div>
-                <button
-                  id="agregar-carrito"
-                  className="boton-carrito btn-carrito"
-                  onClick={() => agregarAlCarrito(producto)}
-                >
-                  Agregar al carrito
-                </button>
-                <p className="cta-legado">
-                  Esto no es solo una compra, es una inversión en tu legado. Una
-                  historia que envejece con gracia.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div className="product-details-container">
+      <Link to="/productos" className="volver-link">← Volver</Link>
+
+      <h1>{producto.nombre}</h1>
+
+      {producto.imagenUrl && (
+        <img
+          src={producto.imagenUrl}
+          alt={producto.nombre}
+          className="product-image"
+        />
+      )}
+
+      <p><strong>Precio:</strong> ${producto.precio}</p>
+      <p><strong>Stock:</strong> {producto.stock}</p>
+      <p>{producto.descripcion}</p>
+
+      <button
+        onClick={handleDelete}
+        disabled={eliminando}
+        className="btn-eliminar"
+        style={{
+          marginTop: 16,
+          padding: "10px 16px",
+          border: "1px solid #c00",
+          background: "#ffd6d6",
+          color: "#c00",
+          borderRadius: "5px",
+          cursor: eliminando ? "not-allowed" : "pointer"
+        }}
+      >
+        {eliminando ? "Eliminando..." : "Eliminar Producto"}
+      </button>
+
+      {errorEliminar && (
+        <p className="error">{errorEliminar}</p>
+      )}
     </div>
   );
 }
-
-export default ProductDetails;
