@@ -3,13 +3,42 @@ import { Link } from 'react-router-dom';
 import '../styles/login.css'
 
 function Login() {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+    const [formData, setFormData] = useState({
+    email: '',
+    password: '',
+  })
 
-  const handleSubmit = (e) => {
+    const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    })
+  }
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    // Aquí conectarás con tu backend JWT
-    console.log('Login:', { email, password })
+
+    try {
+    const response = await fetch("http://localhost:4000/api/usuarios/login", {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData), // formData contiene { email, password }
+    });
+ 
+    const data = await response.json();
+    if (!response.ok) throw new Error(data.message);
+ 
+    // ¡Éxito! Aquí recibimos el token desde el backend.
+    console.log('Login exitoso, token:', data.token);
+    
+    // El siguiente paso es guardar este token en el cliente.
+ 
+  } catch (error) {
+    alert(`Error en el login: ${error.message}`);
+  }
+
+/*     // Aquí conectarás con tu backend JWT
+    console.log('Login:', { email, password }) */
   }
 
   return (
@@ -23,9 +52,10 @@ function Login() {
             <label>Correo electrónico</label>
             <input
               type="email"
+              name="email"
               placeholder="tu@email.com"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              value={formData.email}
+              onChange={handleChange}
               required
             />
           </div>
@@ -35,9 +65,10 @@ function Login() {
             <div className="password-input">
               <input
                 type="password"
+                name="password"
                 placeholder="Introduce tu contraseña"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                value={formData.password}
+                onChange={handleChange}
                 required
               />
             </div>

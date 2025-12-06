@@ -4,7 +4,7 @@ import '../styles/registro.css'
 
 function Registro() {
   const [formData, setFormData] = useState({
-    nombre: '',
+    username: '',
     email: '',
     password: '',
     confirmPassword: ''
@@ -17,14 +17,36 @@ function Registro() {
     })
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
+
     if (formData.password !== formData.confirmPassword) {
       alert('Las contraseñas no coinciden')
       return
     }
-    // Aquí conectarás con tu backend JWT
-    console.log('Registro:', formData)
+
+    try {
+    const response = await fetch("http://localhost:4000/api/usuarios/registro", { // Apunta a tu endpoint de backend
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData), // formData contiene { username, email, password }
+    });
+ 
+    if (!response.ok) {
+      // Manejar errores del servidor (ej: usuario ya existe)
+      const errorData = await response.json();
+      throw new Error(errorData.message);
+    }
+ 
+    const data = await response.json();
+    alert(`¡Registro exitoso para ${data.username}!`);
+ 
+  } catch (error) {
+    alert(`Error en el registro: ${error.message}`);
+  }
+
+/*     // Aquí conectarás con tu backend JWT
+    console.log('Registro:', formData) */
   }
 
   return (
@@ -46,9 +68,9 @@ function Registro() {
               <label>Nombre completo</label>
               <input
                 type="text"
-                name="nombre"
+                name="username"
                 placeholder="Introduce tu nombre completo"
-                value={formData.nombre}
+                value={formData.username}
                 onChange={handleChange}
                 required
               />
