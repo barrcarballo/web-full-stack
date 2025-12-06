@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+:root {
+  --colorPrimario: #A0522D;
+  --colorSecundario: #87A96B;
+  --colorFondo: #F5E6D3;
+  --colorDetalles: #D4A437;
+  --colorAcentos: #C47A6D;
+
+  --fuentePrimaria: 'Inter', sans-serif;
+  --fuenteSecundaria: 'Playfair Display', georgia;
+
+  --colorBlanco: #ffffff;
+  --colorNegro: #000000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.register-container {
+  display: flex;
+  min-height: 100vh;
+  font-family: var(--fuentePrimaria);
+}
+
+.register-left {
+  flex: 1;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.25)),
+    url("images/fotoRegistro.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.furniture-image {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+.furniture-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.register-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  background: var(--colorBlanco);
+}
+
+.register-form {
+  width: 100%;
+  max-width: 450px;
+}
+
+.tituloRegistro {
+  font-size: 32px;
+  color: #1a1a1a;
+  margin-bottom: 32px;
+  font-family: var(--fuenteSecundaria);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: var(--fuentePrimaria)
+}
+
+input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border-color 0.2s;
+  font-family: var(--fuentePrimaria)
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--colorAcentos);
+}
+
+input::placeholder {
+  color: #9ca3af;
+}
+
+.password-input {
+  position: relative;
+  
+}
+
+.password-input button {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  
+}
+
+.register-btn {
+  width: 100%;
+  padding: 14px;
+  background: var(--colorPrimario);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 24px;
+  transition: background 0.2s;
+  font-family: var(--fuentePrimaria)
+}
+
+.register-btn:hover {
+  background: #7A3E1A;
+}
+
+.login-link {
+  text-align: center;
+  margin-top: 24px;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.login-link a {
+  color: var(--colorPrimario);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 1024px) {
+  .register-left {
+    padding: 30px;
+  }
+
+  .furniture-image {
+    max-width: 400px;
+  }
+
+  .register-right {
+    padding: 30px;
+  }
+
+  h1 {
+    font-size: 28px;
+    margin-bottom: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .register-container {
+    flex-direction: column;
+  }
+
+  .register-left {
+    min-height: 250px;
+    padding: 40px 20px;
+  }
+
+  .furniture-image {
+    max-width: 350px;
+  }
+
+  .register-right {
+    padding: 40px 20px;
+  }
+
+  .register-form {
+    max-width: 100%;
+  }
+
+  h1 {
+    font-size: 26px;
+    margin-bottom: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .register-left {
+    min-height: 200px;
+    padding: 30px 15px;
+  }
+
+  .furniture-image {
+    max-width: 280px;
+    border-radius: 12px;
+  }
+
+  .register-right {
+    padding: 30px 15px;
+  }
+
+  h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  label {
+    font-size: 13px;
+  }
+
+  input {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+
+  .register-btn {
+    padding: 12px;
+    font-size: 15px;
+    margin-top: 20px;
+  }
+
+  .login-link {
+    font-size: 13px;
+    margin-top: 20px;
+  }
+}
