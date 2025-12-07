@@ -21,7 +21,6 @@ import ProtectedRoute from './components/protectedComponent.jsx';
 function AppContent() {
   const location = useLocation();
   const { cantidad } = useCart();
-  const [carrito, setCarrito] = useState([]);
 
   // Rutas donde NO se mostrará Header y Footer
   const rutasSinLayout = ['/login', '/registro'];
@@ -42,7 +41,7 @@ function AppContent() {
 
   return (
     <>
-      {mostrarLayout && <Header cantidadCarrito={carrito.length} />}
+      {mostrarLayout && <Header cantidadCarrito={cantidad} />}
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
