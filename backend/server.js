@@ -14,6 +14,7 @@ mongoose.connect(DB_URI)
 const logger = require('./scripts/logger');
 const productosRoutes = require('./Routes/productosRoutes');
 const usuariosRoutes = require('./Routes/usuariosRoutes');
+const pedidosRoutes = require('./Routes/pedidosRoutes');
 
 app.use(cors());
 app.use(logger);
@@ -22,6 +23,7 @@ app.use('/images', express.static('public/images'));
  
 app.use('/api/productos', productosRoutes);
 app.use('/api/usuarios', usuariosRoutes);
+app.use('/api/pedidos', pedidosRoutes);
  
 //Middleware para rutas no encontradas(404)
 app.use((req, res, next) => {
