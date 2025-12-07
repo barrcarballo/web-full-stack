@@ -16,10 +16,12 @@ import Perfil from './pages/profile.jsx';
 
 // Auth
 import { AuthProvider } from './context/AuthContext.jsx';
+import { CartProvider, useCart } from './context/CartContext.jsx';
 import ProtectedRoute from './components/protectedComponent.jsx';
 
 function AppContent() {
   const location = useLocation();
+  const { cantidad } = useCart();
   const [carrito, setCarrito] = useState([]);
 
   // Rutas donde NO se mostrará Header y Footer
@@ -86,7 +88,8 @@ function App() {
   return (
     <Router>
       <AuthProvider>
-        <AppContent />
+        <CartProvider>
+          <AppContent />
       </AuthProvider>
     </Router>
   );
