@@ -10,8 +10,7 @@ import Footer from './components/footer.jsx';
 import CrearProducto from './pages/crearProducto.jsx';
 import Login from './pages/login.jsx';
 import Registro from './pages/registro.jsx';
-
-//Nuevas páginas protegidas
+import Carrito from './pages/carrito.jsx';
 import Perfil from './pages/profile.jsx';
 
 // Auth
@@ -53,6 +52,7 @@ function AppContent() {
             element={<DetallesProducto agregarAlCarrito={agregarAlCarrito} />}
           />
           <Route path="/contacto" element={<Contacto />} />
+          <Route path="/carrito" element={<Carrito />} />
 
           {/* Ruta protegida */}
           <Route
