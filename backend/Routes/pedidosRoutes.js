@@ -7,7 +7,7 @@ router.post('/', verifyToken, async (req, res) => {
   try {
     const { productos, total } = req.body;
 
-    const usuarioId = req.user.id || req.user._id; 
+    const usuarioId = req.user._id; 
 
     if (!productos || productos.length === 0) {
       return res.status(400).json({ message: 'No hay productos en el carrito' });
