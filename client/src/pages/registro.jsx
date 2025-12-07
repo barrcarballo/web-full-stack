@@ -1,53 +1,58 @@
-import { useState } from 'react'
-import { Link } from 'react-router-dom';
-import '../styles/registro.css'
+import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import '../styles/registro.css';
 
 function Registro() {
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     username: '',
     email: '',
     password: '',
     confirmPassword: ''
-  })
+  });
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
-    })
-  }
+    });
+  };
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
     if (formData.password !== formData.confirmPassword) {
-      alert('Las contraseñas no coinciden')
-      return
+      alert('Las contraseñas no coinciden');
+      return;
     }
 
     try {
-    const response = await fetch("http://localhost:4000/api/usuarios/registro", { // Apunta a tu endpoint de backend
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(formData), // formData contiene { username, email, password }
-    });
- 
-    if (!response.ok) {
-      // Manejar errores del servidor (ej: usuario ya existe)
-      const errorData = await response.json();
-      throw new Error(errorData.message);
-    }
- 
-    const data = await response.json();
-    alert(`¡Registro exitoso para ${data.username}!`);
- 
-  } catch (error) {
-    alert(`Error en el registro: ${error.message}`);
-  }
+      const response = await fetch("http://localhost:4000/api/usuarios/registro", {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          username: formData.username,
+          email: formData.email,
+          password: formData.password,
+        }),
+      });
+    
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || 'Error en el registro');
+      }
+    
+      const data = await response.json();
+      alert(`¡Registro exitoso para ${data.username || formData.username}!`);
 
-/*     // Aquí conectarás con tu backend JWT
-    console.log('Registro:', formData) */
-  }
+      // Después de registro → ir a login
+      navigate('/login');
+    
+    } catch (error) {
+      alert(`Error en el registro: ${error.message}`);
+    }
+  };
 
   return (
     <div className="register-container">
@@ -60,8 +65,6 @@ function Registro() {
       <div className="register-right">
         <div className="register-form">
           <h1 className='tituloRegistro'>Crea tu cuenta</h1>
-          <p className="subtitle">
-          </p>
 
           <form onSubmit={handleSubmit}>
             <div className="form-group">
@@ -127,7 +130,7 @@ function Registro() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default Registro
+export default Registro;
