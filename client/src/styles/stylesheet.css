@@ -60,6 +60,62 @@ nav {
   font-weight: 500;
 }
 
+/* profile container  */
+.profile-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* profile icon */
+.profile-icon {
+  width: 120%;
+  cursor: pointer;
+}
+
+.profile-name {
+  font-size: 0.75rem;
+  color: rgb(93, 93, 93);
+  margin-top: 0.2rem;
+}
+
+/* dropdown */
+.profile-dropdown {
+  position: absolute;
+  top: 120%;
+  right: 50%;
+  transform: translateX(50%);
+  background: #f5e6d3;
+  padding: 0.5rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  z-index: 3000;
+  white-space: nowrap;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.profile-dropdown-item {
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+   color: rgb(93, 93, 93);
+  font-size: 0.85rem;
+  padding: 0.2rem 0;
+  margin: 0.5em;
+}
+
+.profile-dropdown-item:hover {
+  color: var(--colorPrimario);
+  text-decoration: underline;
+
+}
+
+
 /* Hero Banner  */
 .hero-banner {
   height: 100vh;
@@ -183,6 +239,69 @@ nav {
   font-style: italic;
 }
 
+/* profile page */
+.perfil-container {
+  padding: 3rem 1rem;
+  min-height: 70vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  animation: fadeIn 0.3s ease-out;
+}
+
+.perfil-title {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  color: var(--colorPrimario);
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+.perfil-card {
+  background: var(--colorFondo);
+  padding: 2rem 2.5rem;
+  border-radius: 16px;
+
+  width: min(90%, 500px);
+
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  border: 1px solid rgba(255,255,255,0.12);
+  backdrop-filter: blur(8px);
+
+  font-size: 1.05rem;
+  line-height: 1.7;
+
+  animation: slideUp 0.4s ease-out;
+}
+.perfil-card span {
+  font-weight: 600;
+  color: var(--colorPrimario);
+}
+.perfil-empty {
+  font-size: 1.1rem;
+  color: #999;
+  margin-top: 2rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
 /* Footer  */
 .footer {
   background-color: var(--colorPrimario);
@@ -301,4 +420,11 @@ nav {
   .footer-logo {
     max-width: 120px;
   }
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(10px); }
+  10% { opacity: 1; transform: translateY(0); }
+  90% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(10px); }
 }
