@@ -36,7 +36,7 @@ function AppContent() {
           <Route path="/productos" element={<Productos />} />
           <Route
             path="/producto/:id"
-            element={<DetallesProducto agregarAlCarrito={agregarAlCarrito} />}
+            element={<DetallesProducto />}
           />
           <Route path="/contacto" element={<Contacto />} />
           <Route path="/carrito" element={<Carrito />} />
