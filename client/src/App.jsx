@@ -11,7 +11,7 @@ import CrearProducto from './pages/crearProducto.jsx';
 import Login from './pages/login.jsx';
 import Registro from './pages/registro.jsx';
 
-// 🔐 Nuevas páginas protegidas
+//Nuevas páginas protegidas
 import Perfil from './pages/profile.jsx';
 
 // Auth
