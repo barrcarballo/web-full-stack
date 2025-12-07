@@ -15,7 +15,7 @@ import Registro from './pages/registro.jsx';
 import Perfil from './pages/profile.jsx';
 
 // Auth
-import { AuthProvider } from './context/authContext.jsx';
+import { AuthProvider } from './context/AuthContext.jsx';
 import ProtectedRoute from './components/protectedComponent.jsx';
 
 function AppContent() {
