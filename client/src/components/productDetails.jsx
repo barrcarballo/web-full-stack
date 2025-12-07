@@ -1,12 +1,17 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom"; //  para redirigir después de eliminar
+import { useNavigate, useParams } from "react-router-dom";
+import { useCart } from "../context/CartContext";
 import "../styles/detalles-catalogo.css";
 
-function ProductDetails({ productId, agregarAlCarrito }) {
+function ProductDetails() {
+  const { id } = useParams(); 
+  const productId = id;
   const [producto, setProducto] = useState(null);
   const [Cargando, setCargando] = useState(true);
   const [error, setError] = useState(null);
   const navigate = useNavigate(); //  usamos navigate para volver al catálogo
+
+  const { agregarAlCarrito } = useCart();
 
   useEffect(() => {
     if (!productId) return;
