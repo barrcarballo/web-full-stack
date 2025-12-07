@@ -26,18 +26,6 @@ function AppContent() {
   const rutasSinLayout = ['/login', '/registro'];
   const mostrarLayout = !rutasSinLayout.includes(location.pathname);
 
-  useEffect(() => {
-    const carritoGuardado = JSON.parse(localStorage.getItem("carrito")) || [];
-    setCarrito(carritoGuardado);
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem("carrito", JSON.stringify(carrito));
-  }, [carrito]);
-  
-  const agregarAlCarrito = (producto) => {
-    setCarrito((prevCarrito) => [...prevCarrito, producto]);
-  };  
 
   return (
     <>
