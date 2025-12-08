@@ -67,7 +67,7 @@ export function CartProvider({ children }) {
 
       if (!response.ok) throw new Error("Error al crear el pedido");
 
-      const data = await response.json();
+      /* const data = await response.json(); */
       alert("¡Compra exitosa! 🎉 Tu pedido ha sido registrado.");
       limpiarCarrito(); 
       return true;

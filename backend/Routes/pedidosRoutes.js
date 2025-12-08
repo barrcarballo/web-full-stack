@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const Pedido = require('../Models/Pedido');
-const verifyToken = require('../Scripts/authMiddleware'); 
+const Pedido = require('../models/Pedido');
+const verifyToken = require('../scripts/authMiddleware'); 
 
 router.post('/', verifyToken, async (req, res) => {
   try {

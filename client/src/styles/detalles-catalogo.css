@@ -29,7 +29,7 @@ body {
     flex-direction: column; /* Organiza los elementos en columna por defecto */
     align-items: center;
     gap: 40px;
-    margin: 5%;
+    margin: 2.5%;
 }
 
 .detalle-titulo {
@@ -213,6 +213,10 @@ body {
         align-items: flex-start; /* Alinea los elementos en la parte superior */
         justify-content: center;
         gap: 80px;
+    }
+
+    .detalle-titulo {
+        margin-bottom: 30px;
     }
 
     .detalle-imagen {

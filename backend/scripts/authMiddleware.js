@@ -1,27 +1,35 @@
 const jwt = require('jsonwebtoken');
+const Usuario = require('../models/Usuario');
  
-const verifyToken = (req, res, next) => {
+const verifyToken = async (req, res, next) => {
   const authHeader = req.headers.authorization;
  
   // 1. Verificamos que el encabezado y el token existan
   if (authHeader && authHeader.startsWith('Bearer ')) {
     const token = authHeader.split(' ')[1]; // Extraemos el token
  
-    // 2. Verificamos el token
-    jwt.verify(token, process.env.JWT_SECRET, (err, decodedPayload) => {
-      if (err) {
-        // Si el token no es válido (expirado, manipulado)
-        return res.status(403).json({ message: 'Token inválido o expirado' }); // 403 Forbidden
+    try {
+      // 2. Verificamos el token
+      const decodedPayload = jwt.verify(token, process.env.JWT_SECRET);
+      
+      // 3. Buscamos el usuario en la base de datos
+      const usuario = await Usuario.findById(decodedPayload.id || decodedPayload._id);
+      
+      if (!usuario) {
+        return res.status(401).json({ message: 'Usuario no encontrado' });
       }
- 
-      // 3. Si es válido, guardamos el payload (info del user) en el objeto 'req'
-      // para que las rutas posteriores puedan usarlo.
-      req.user = decodedPayload;
-      next(); // 4. Dejamos que la petición continúe hacia su destino
-    });
+      
+      // 4. Guardamos el usuario completo en req.user
+      req.user = usuario;
+      next();
+      
+    } catch (err) {
+      // Si el token no es válido (expirado, manipulado)
+      return res.status(403).json({ message: 'Token inválido o expirado' });
+    }
   } else {
     // Si no hay token, no hay acceso
-    res.status(401).json({ message: 'No estás autenticado' }); // 401 Unauthorized
+    res.status(401).json({ message: 'No estás autenticado' });
   }
 };
  
