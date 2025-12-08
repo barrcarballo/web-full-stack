@@ -1,6 +1,6 @@
 # Proyecto Full Stack (Sprint 7 y 8)
 
-Proyecto Full Stack desarrollado por el **Grupo 5**
+Proyecto Full Stack desarrollado por el **Grupo 5**.
 
 ## Integrantes
 - **Bárbara Victoria Carballo**  
@@ -28,6 +28,7 @@ Proyecto Full Stack desarrollado por el **Grupo 5**
 - Finalizar compras mediante creación de pedidos protegidos.
 
 El sitio fue desarrollado con una arquitectura **MERN Stack (MongoDB, Express, React, Node.js)**.
+
 En este sprint final incorporamos el ciclo de vida completo de un usuario, autenticación segura con JWT, manejo global de estados con React Context API, y despliegue completo en Render + Vercel + MongoDB Atlas.
 
 ---
