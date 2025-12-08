@@ -1,6 +1,6 @@
 # Proyecto Full Stack (Sprint 7 y 8)
 
-Proyecto Full Stack desarrollado por **Grupo 5 - Antecedentes Penales**
+Proyecto Full Stack desarrollado por el **Grupo 5**
 
 ## Integrantes
 - **Bárbara Victoria Carballo**  
@@ -20,28 +20,34 @@ Proyecto Full Stack desarrollado por **Grupo 5 - Antecedentes Penales**
 ##  Descripción del Proyecto
 
 **Hermanos Jota** es una aplicación web para una mueblería artesanal que permite a los usuarios:
-- Explorar un catálogo de productos.  
+- Navegar un catálogo de productos.
 - Ver detalles de cada mueble.  
 - Agregar productos al carrito de compras.  
-- Contactar con la tienda.  
+- Crear una cuenta y autenticarse.
+- Acceder a rutas protegidas (perfil, pedidos).
+- Finalizar compras mediante creación de pedidos protegidos.
 
 El sitio fue desarrollado con una arquitectura **MERN Stack (MongoDB, Express, React, Node.js)**.
+En este sprint final incorporamos el ciclo de vida completo de un usuario, autenticación segura con JWT, manejo global de estados con React Context API, y despliegue completo en Render + Vercel + MongoDB Atlas.
 
 ---
 
 ## Tecnologías Utilizadas
 
 ### **Frontend**
-- React  
+- React + Vite 
 - React Router DOM  
-- Vite  
+- Context API (Auth + Cart) 
+- Fetch API
 - CSS puro  
 
 ### **Backend**
 - Node.js  
 - Express  
 - Mongoose  
-- MongoDB Atlas  
+- MongoDB Atlas
+- bcrypt
+- JSON Web Token (JWT)
 
 ---
 
@@ -63,6 +69,7 @@ En la carpeta **backend**, crear un archivo `.env` con el siguiente contenido:
 ```env
 PORT=4000
 DATABASE_URL=mongodb+srv://agusmartinez:hermanosJota@cluster0.ckbz2km.mongodb.net/muebleria?retryWrites=true&w=majority
+JWT_SECRET=ESTA_ES_MI_CLAVE_SUPER_SECRETA_Y_LARGA_12345
 ```
 
 > ⚠️ **Importante:**  
