@@ -1,4 +1,4 @@
-# Proyecto Full Stack (Sprint 5 y 6)
+# Proyecto Full Stack (Sprint 7 y 8)
 
 Proyecto Full Stack desarrollado por **Grupo 5 - Antecedentes Penales**
 
