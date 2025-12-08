@@ -2,7 +2,7 @@ import React from 'react';
 import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
 import { Link, useNavigate } from 'react-router-dom';
-import '../styles/catalogo.css'; 
+import '../styles/carrito.css'; 
 
 const Carrito = () => {
   const { carrito, eliminarDelCarrito, limpiarCarrito, calcularTotal, finalizarCompra } = useCart();
@@ -27,15 +27,15 @@ const Carrito = () => {
 
   if (carrito.length === 0) {
     return (
-      <div style={{ padding: '50px', textAlign: 'center' }}>
+      <div className='carritoVacio'>
         <h2>Tu carrito está vacío</h2>
-        <Link to="/productos" className="btn-carrito">Ver Productos</Link>
+        <Link to="/productos" className="verProductos">Ver Productos</Link>
       </div>
     );
   }
 
   return (
-    <div className="container" style={{ padding: '20px' }}>
+    <div className="contenedorProductos">
       <h1>Tu Carrito de Compras</h1>
       
       <div className="carrito-lista">
@@ -47,11 +47,10 @@ const Carrito = () => {
             padding: '10px 0',
             alignItems: 'center'
           }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
+            <div className='cadaProducto'>
               <img 
                 src={item.imagenURL || `/images/${item.nombre}.png`} 
                 alt={item.nombre} 
-                style={{ width: '60px', height: '60px', objectFit: 'cover' }}
               />
               <div>
                 <h3>{item.nombre}</h3>
@@ -61,7 +60,7 @@ const Carrito = () => {
             
             <button 
               onClick={() => eliminarDelCarrito(item._id)}
-              style={{ backgroundColor: '#ff4444', color: 'white', border: 'none', padding: '5px 10px', cursor: 'pointer', borderRadius: '5px' }}
+              className='botonEliminarProducto'
             >
               Eliminar
             </button>
@@ -69,21 +68,20 @@ const Carrito = () => {
         ))}
       </div>
 
-      <div className="carrito-resumen" style={{ marginTop: '30px', textAlign: 'right' }}>
+      <div className="carritoResumen">
         <h2>Total a Pagar: ${total}</h2>
         
-        <div style={{ display: 'flex', gap: '10px', justifyContent: 'flex-end', marginTop: '15px' }}>
+        <div className='contenedorCarritoResumen'>
             <button 
                 onClick={limpiarCarrito}
-                style={{ backgroundColor: '#666', color: 'white', padding: '10px 20px', border: 'none', borderRadius: '5px', cursor: 'pointer' }}
+                className='botonResumenVaciar'
             >
                 Vaciar Carrito
             </button>
 
             <button 
                 onClick={handleFinalizarCompra}
-                className="boton-carrito" 
-                style={{ fontSize: '1.2rem', padding: '10px 30px' }}
+                className="botonResumenFinalizar" 
             >
                 Finalizar Compra
             </button>

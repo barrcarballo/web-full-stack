@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+:root {
+    --colorPrimario: #A0522D;
+    --colorSecundario: #87A96B;
+    --colorFondo: #F5E6D3;
+    --colorDetalles: #D4A437;
+    --colorAcentos: #C47A6D;
+
+    --fuentePrimaria: 'Inter', sans-serif;
+    --fuenteSecundaria: 'Playfair Display', georgia;
+
+    --colorBlanco: #ffffff;
+    --colorNegro: #000000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.carritoVacio {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    font-family: var(--fuentePrimaria);
+    padding: 50px;
+    margin-top: 110px;
+    margin-bottom: 110px;
+}
+
+.verProductos{
+    text-decoration: none;
+    color: var(--colorPrimario);
+}
+
+.verProductos:hover{
+    text-decoration: underline;
+}
+
+.contenedorProductos{
+    padding: 20px;
+}
+
+.cadaProducto{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 14px;
+    
+}
+
+.cadaProducto img{
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+}
+
+.botonEliminarProducto{
+    background-color: #ff4444;
+    color: var(--colorBlanco);
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: var(--fuentePrimaria);
+    transition: background-color 0.3s ease;
+}
+
+.botonEliminarProducto:hover{
+    background-color: #cc0000;
+}
+
+.carritoResumen {
+    margin-top: 30px;
+    text-align: right;
+    font-size: 14px;
+}
+
+.contenedorCarritoResumen {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 15px;
+}
+
+.botonResumenVaciar {
+    background-color: #666;
+    color: var(--colorBlanco);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: var(--fuentePrimaria);
+    transition: background-color 0.3s ease;
+}
+
+.botonResumenVaciar:hover {
+    background-color: #333;
+}
+
+.botonResumenFinalizar{
+    background-color: var(--colorDetalles);
+    color: var(--colorBlanco);
+    font-weight: 500;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: var(--fuentePrimaria);
+    transition: background-color 0.3s ease;
+}
+
+.botonResumenFinalizar:hover{
+    background-color: #b88d2d;
+}
