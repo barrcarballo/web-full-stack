@@ -24,12 +24,12 @@ const pedidoSchema = new mongoose.Schema({
   total: {
     type: Number,
     required: true
-  },
+  }/* ,
   estado: {
     type: String,
     default: 'pendiente', 
     enum: ['pendiente', 'enviado', 'entregado']
-  }
+  } */
 }, {
   timestamps: true
 });
