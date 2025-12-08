@@ -1,12 +1,12 @@
 # Proyecto Full Stack (Sprint 7 y 8)
 
-Proyecto Full Stack desarrollado por el **Grupo 5**.
+Este proyecto forma parte del desarrollo final de una **aplicación Full Stack** realizado por el **Grupo 5** en el marco de la **Formación Full Stack Developer del Instituto Tecnlógico de Buenos Aires (ITBA)**
 
 ## Integrantes
-- **Bárbara Victoria Carballo**  
-- **Macarena Jazmín Calderón**  
-- **Agustín Francisco Martínez**  
-- **Agustín Andrada Berenguer**
+- **Carballo, Bárbara Victoria.**  
+- **Calderón, Macarena Jazmín.**  
+- **Martínez, Agustín Francisco.**  
+- **Berenguer, Agustín Andrada.**
 
 ---
 
@@ -19,17 +19,21 @@ Proyecto Full Stack desarrollado por el **Grupo 5**.
 
 ##  Descripción del Proyecto
 
-**Hermanos Jota** es una aplicación web para una mueblería artesanal que permite a los usuarios:
-- Navegar un catálogo de productos.
-- Ver detalles de cada mueble.  
-- Agregar productos al carrito de compras.  
-- Crear una cuenta y autenticarse.
-- Acceder a rutas protegidas (perfil, pedidos).
-- Finalizar compras mediante creación de pedidos protegidos.
+**Hermanos Jota** es una aplicación web creada para una mueblería artesanal, que permite a los usuarios realizar un recorrido completo desde la exploración del catálogo hasta la compra final. Entre sus funcionalidades principales se encuentran:
+- Navegación del catálogo de productos.
+- Visualización del detalle de cada mueble.
+- Gestión del carrito de compras.
+- Registro y autenticación de usuarios.
+- Acceso a rutas protegidas (perfil, pedidos).
+- Creación y gestión de pedidos autenticados.
 
-El sitio fue desarrollado con una arquitectura **MERN Stack (MongoDB, Express, React, Node.js)**.
+El proyecto fue desarrollado utilizando la arquitectura **MERN Stack (MongoDB, Express, React, Node.js)**, aplicando un enfoque modular, escalable y orientado a buenas prácticas.
 
-En este sprint final incorporamos el ciclo de vida completo de un usuario, autenticación segura con JWT, manejo global de estados con React Context API, y despliegue completo en Render + Vercel + MongoDB Atlas.
+En este sprint final se implementaron:
+- Autenticación segura mediante **JWT**.
+- Manejo global del estado utilizando **React Context API**.
+- Ciclo de vida completo del usuario con persistencia de sesión.
+- Despliegue completo del backend en **Render**, del frontend en **Vercel**, y la base de datos en **MongoDB Atlas**.
 
 ---
 
@@ -105,7 +109,66 @@ npm run dev
 
 ---
 
+## Arquitectura del Proyecto
+
+### Estructura General
+El proyecto sigue una arquitectura **cliente-servidor** con separación clara entre **frontend** y **backend**:
+
+```bash
+web-full-stack/
+├── client/          # Aplicación React (Frontend)
+├── backend/         # API REST con Express (Backend)
+└── README.md
+```
+
+### Frontend
+Estructura de carpetas:
+
+```bash
+client/
+├── public/
+│   └── images/              # Imágenes estáticas (productos, logos, íconos)
+├── src/
+│   ├── components/          # Componentes reutilizables
+│   ├── context/             # Contextos globales (Auth, Cart)
+│   ├── data/                # Datos estáticos
+│   ├── pages/               # Páginas/Vistas principales
+│   ├── styles/              # Archivos CSS
+│   ├── App.jsx              # Configuración de rutas
+│   └── main.jsx             # Punto de entrada
+├── index.html
+├── vite.config.js
+└── package.json
+```
+
+### Backend
+Estructura de carpetas:
+
+```bash
+backend/
+├── models/                  # Modelos de Mongoose
+│   ├── Usuario.js
+│   ├── Producto.js
+│   └── Pedido.js
+├── routes/                  # Rutas de la API
+│   ├── usuariosRoutes.js
+│   ├── productosRoutes.js
+│   └── pedidosRoutes.js
+├── scripts/                 # Utilidades y middleware
+│   ├── authMiddleware.js    # Verificación de JWT
+│   ├── logger.js            # Logger de peticiones
+│   └── productos.js         # Datos de ejemplo
+├── public/
+│   └── images/              # Imágenes servidas estáticamente
+├── .env                     # Variables de entorno
+├── server.js                # Punto de entrada
+└── package.json
+```
+---
+
 ## Endpoints principales del backend
+
+### Productos
 
 | Método | Ruta | Descripción |
 |--------|------|-------------|
@@ -114,3 +177,15 @@ npm run dev
 | `POST` | `/api/productos` | Crea un nuevo producto |
 | `PUT` | `/api/productos/:id` | Actualiza un producto |
 | `DELETE` | `/api/productos/:id` | Elimina un producto |
+
+### Usuarios
+| Método | Ruta | Descripción |
+|--------|------|-------------|
+| `GET` | `/api/usuarios` | Listar usuarios (sin passwords) |
+| `POST` | `/api/usuarios/registro` | Registrar nuevo usuario |
+| `POST` | `/api/usuarios/login` | Iniciar sesión (devuelve JWT) |
+
+### Pedidos
+| Método | Ruta | Descripción |
+|--------|------|-------------|
+| `POST` | `/api/pedidos` | Crear pedido |
