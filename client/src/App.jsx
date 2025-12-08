@@ -77,6 +77,7 @@ function App() {
       <AuthProvider>
         <CartProvider>
           <AppContent />
+        </CartProvider>
       </AuthProvider>
     </Router>
   );
