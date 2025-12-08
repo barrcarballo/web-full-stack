@@ -42,6 +42,45 @@ body {
     text-align: center;
 }
 
+.detalle-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.btn-volver-catalogo {
+  position: absolute;
+  left: 0;
+  background-color: var(--colorFondo);
+  border: transparent;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 18px;
+  transition: all 0.3s ease;
+  font-family: var(--fuentePrimaria);
+}
+
+.btn-volver-catalogo:hover {
+  background-color: #7A3E1A;
+  color: white;
+}
+
+.detalle-titulo {
+    font-family: var(--fuenteSecundaria);
+    font-size: 3em;
+    margin-bottom: 0;
+    color: var(--colorNegro); 
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-color: var(--colorPrimario);
+}
+
 /* NUEVO: Contenedor para la imagen y la info */
 .detalle-cuerpo {
     display: flex;
@@ -133,19 +172,34 @@ body {
     background-color: var(--colorDetalles);
     color: var(--colorBlanco);
     border: none;
-    padding: 15px 30px;
-    font-size: 1em;
+    padding: 10px 20px;
+    font-size: 0.9em;
     font-weight: 500;
     cursor: pointer;
     border-radius: 8px;
-    margin-top: 20px;
     transition: background-color 0.3s ease;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
+    font-family: var(--fuentePrimaria);
 }
 
 .boton-carrito:hover {
     background-color: #b88d2d;
+}
+
+.btn-eliminar-producto {
+    font-family: var(--fuentePrimaria);
+    font-size: 0.9em;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    border-radius: 8px;
+}
+
+.botones {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Media Queries para ajustar el diseño en pantallas más grandes */
@@ -162,15 +216,14 @@ body {
     }
 
     .detalle-imagen {
-        flex: 1;
-        max-width: 40%; /* Ancho de la imagen */
+        align-self: center;
+        max-width: 30%; /* Ancho de la imagen */
         padding: 0;
     }
     
     .detalle-info {
-        flex: 1;
         text-align: left;
-        max-width: 60%; /* Ancho del recuadro de información */
-        padding: 40px; /* Relleno del recuadro */
+        max-width: 53%; /* Ancho del recuadro de información */
+        padding: 25px; /* Relleno del recuadro */
     }
 }

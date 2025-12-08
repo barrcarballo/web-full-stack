@@ -43,7 +43,9 @@ function Header({ cantidadCarrito }) {
 
           <Link to="/carrito" className="cart">
             <img src="/images/Carrito.svg" alt="carrito" />
-            <span id="contador">{cantidadCarrito}</span>
+            {cantidadCarrito > 0 && (
+              <span className="cart-badge">{cantidadCarrito}</span>
+            )}
           </Link>
 
           {/* Perfil */}

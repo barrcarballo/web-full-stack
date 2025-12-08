@@ -36,11 +36,6 @@ function ProductList() {
       <main className="contenido">
         <div className = "barraSuperior">
           <p className="titulo">Nuestra colección</p>
-          
-          {/* BOTÓN DE CREAR PRODUCTO */}
-          <Link to="/admin/crear-producto" className="btn-crear-producto">
-            + Crear nuevo producto
-          </Link>
 
             <div className="barraBusqueda">
                 <img className="logoBusqueda" src="images/Simbolo busqueda.svg" alt="Simbolo de busqueda" />
@@ -63,6 +58,11 @@ function ProductList() {
             />
           ))}
         </section>
+
+          {/* BOTÓN DE CREAR PRODUCTO */}
+          <Link to="/admin/crear-producto" className="btn-crear-producto">
+          Crear producto
+          </Link>
 
       </main>
     </>

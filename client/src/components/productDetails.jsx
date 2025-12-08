@@ -60,7 +60,17 @@ function ProductDetails() {
   return (
     <div className="detalle-container">
       <div className="detalle-producto">
-        <h2 className="detalle-titulo">{producto.nombre}</h2>
+
+        <div className="detalle-header">
+          <button 
+            className="btn-volver-catalogo"
+            onClick={() => navigate('/productos')}
+          >
+            Volver
+          </button>
+          <h2 className="detalle-titulo">{producto.nombre}</h2>
+        </div>
+
         <div className="detalle-cuerpo">
           <div className="detalle-imagen">
             <img
@@ -99,7 +109,12 @@ function ProductDetails() {
                   ))}
               </ul>
 
-              <div>
+              <p className="cta-legado">
+                Esto no es solo una compra, es una inversión en tu legado.
+                Una historia que envejece con gracia.
+              </p>
+
+              <div className="botones">
                 <button
                   id="agregar-carrito"
                   className="boton-carrito btn-carrito"
@@ -115,10 +130,6 @@ function ProductDetails() {
                   Eliminar Producto
                 </button>
 
-                <p className="cta-legado">
-                  Esto no es solo una compra, es una inversión en tu legado.
-                  Una historia que envejece con gracia.
-                </p>
               </div>
             </div>
           </div>

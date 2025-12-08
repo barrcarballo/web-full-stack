@@ -93,7 +93,7 @@ body {
 
 .barraBusqueda {
     width: 50%;
-    min-width: 250px;
+    min-width: 20px;
     align-self: center;
     margin-top: 20px;
     display: flex;
@@ -106,21 +106,23 @@ body {
     flex-direction: row-reverse;
 }
 .btn-crear-producto{
-    width: 10%;
-    min-width: 250px;
+    width: 150px;
     margin-top: 10px;
     display: flex;
     justify-content: center;
+    align-self: center;
     text-decoration: none;
     color: var(--colorNegro);
     font-size: 0.9em;
+    font-family: var(--fuentePrimaria);
     gap: 10px;
     border-radius: 12px;
     padding: 8px 12px;
     background-color: rgba(245, 230, 211, 0.25);
     box-shadow: 0 10px 15px #e0e0e0;
-    
+    margin-top: 30px;
 }
+
 .btn-crear-producto:hover{
     background-color: var(--colorPrimario);
     color: var(--colorFondo);
@@ -284,7 +286,7 @@ body {
     .barraBusqueda {
         width: 15%;
         margin-top: initial;
-        padding: 10px 20px;
+        padding: 0px 20px;
         align-self: initial;
     }
 
