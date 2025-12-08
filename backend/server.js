@@ -12,9 +12,9 @@ mongoose.connect(DB_URI)
   .catch(err => console.error('Error al conectar a MongoDB:', err));
 
 const logger = require('./scripts/logger');
-const productosRoutes = require('./Routes/productosRoutes');
-const usuariosRoutes = require('./Routes/usuariosRoutes');
-const pedidosRoutes = require('./Routes/pedidosRoutes');
+const productosRoutes = require('./routes/productosRoutes');
+const usuariosRoutes = require('./routes/usuariosRoutes');
+const pedidosRoutes = require('./routes/pedidosRoutes');
 
 app.use(cors());
 app.use(logger);
